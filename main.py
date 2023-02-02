@@ -64,7 +64,7 @@ def main():
             publisher_name = input("Please, enter the publisher`s name: ")
 
             for line in session.query(Shop).join(Stock).join(Book).join(Publisher)\
-                    .filter(Publisher.name.ilike(f"{publisher_name}")).all():
+                    .filter(Publisher.name.ilike(publisher_name)).all():
                 print(line)
 
         elif command == "id":
